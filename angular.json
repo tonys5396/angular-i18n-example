@@ -9,6 +9,15 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "tw": {
+            "translation": "src/locale/messages.tw.xlf",
+            "baseHref": "/tw/"
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -29,7 +38,7 @@
             "scripts": []
           },
           "configurations": {
-            "production": {
+            "en": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -56,6 +65,35 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "tw": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "localize": ["tw"]
             }
           }
         },
@@ -67,6 +105,12 @@
           "configurations": {
             "production": {
               "browserTarget": "angular-i18n-example:build:production"
+            },
+            "en": {
+              "browserTarget": "angular-i18n-example:build:en"
+            },
+            "tw": {
+              "browserTarget": "angular-i18n-example:build:tw"
             }
           }
         },
