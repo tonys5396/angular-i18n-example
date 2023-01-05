@@ -16,6 +16,13 @@
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="62bae80d2e762f5dd6dceadc89234b11715d0135" datatype="html">
+        <source>I&apos;m new</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>
