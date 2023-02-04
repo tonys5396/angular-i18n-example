@@ -1,0 +1,67 @@
+<!-- 開頭的圖片、標題、下拉選單 -->
+<div class="header bg-image bg-cover background-position: center;">
+  <app-lang-button></app-lang-button>
+  <div class="p-5 text-center ">
+    <!-- <h1 style="color: white" i18n>高雄旅遊景點</h1> -->
+    <h1 style="color: white" i18n>Kaohsiung Tourist Attraction</h1>
+    <select class="form-select" [(ngModel)]="areaNum" (change)="changeArea()">
+      <option *ngFor="let area of select" [selected]="area.Zone === areaName" [value]="area.keyNum">{{area.Zone}}
+      </option>
+    </select>
+  </div>
+</div>
+
+<!-- 按鈕表格 -->
+<div class="buttonArea col-6 bg-cover" style="margin-top: -50px; width: 50%">
+  <h5><strong i18n>Popular administation area</strong></h5>
+  <div class="d-flex justify-content-around mb-2">
+    <button class="btn" style="background-color: mediumpurple" (click)="buttonClick(popularList[0].keyNum)">
+      {{popularList[0]?.Zone}}
+    </button>
+    <button class="btn" style="background-color: lightsalmon" (click)="buttonClick(popularList[1].keyNum)">
+      {{popularList[1]?.Zone}}
+    </button>
+    <button class="btn" style="background-color: goldenrod" (click)="buttonClick(popularList[2].keyNum)">
+      {{popularList[2]?.Zone}}
+    </button>
+    <button class="btn" style="background-color: cadetblue" (click)="buttonClick(popularList[3].keyNum)">
+      {{popularList[3]?.Zone}}
+    </button>
+  </div>
+</div>
+
+<!-- 區域大標、區域資料 -->
+<div class="mid mt-5">
+  <h1 class="text-center" style="color: mediumpurple">{{areaName}}</h1>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 mt-3" *ngFor="let view of viewArea | slice : (currentPage-1)*perPage:currentPage*perPage;">
+        <div class="d-flex align-items-end text-white px-3 pb-2 bg-cover "
+          style="background-image: url('{{view.Picture1}}'); background-position: center; background-size: cover; height:200px;">
+          <h5 class="mb-2" style="-webkit-text-stroke: 0.3pt black;"><strong>{{view.Name}}</strong></h5>
+          <h6 class="mb-2 ml-auto">{{view.Zone}}</h6>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h6 class="card-text">{{view.Opentime}}</h6>
+            <h6 class="card-text">{{view.Add}}</h6>
+            <h6 class="d-flex justify-content-between">{{view.Tel}}</h6>
+          </div>
+          <div class="col">
+            <h6>{{view.Ticketinfo}}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center pt-5">
+      <ngb-pagination [collectionSize]="dataSize" [(page)]="currentPage" [boundaryLinks]="true">
+      </ngb-pagination>
+    </div>
+  </div>
+
+  <div class="footer text-center mt-2">
+    <br />
+    <p style="color: white" i18n>Kaohsiung City Government</p>
+    <p style="color: khaki" i18n>Source : Kaohsiung City Government</p>
+    <br />
+  </div>

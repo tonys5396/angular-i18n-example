@@ -23,6 +23,34 @@
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="1438a1e6f6c098d78d8c3afd8c370f6bac194b29" datatype="html">
+        <source>Kaohsiung Tourist Attraction</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/travel/travel.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a4dfeeb7f67a9986232f1ee2fc676c6eedeed21b" datatype="html">
+        <source>Popular administation area</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/travel/travel.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="021961d1d25aa15cb94b65a42ead55fb2874dc56" datatype="html">
+        <source>Kaohsiung City Government</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/travel/travel.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e11361ec7d8459d7ce960966c5547d6c0e6461a3" datatype="html">
+        <source>Source : Kaohsiung City Government</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/travel/travel.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>

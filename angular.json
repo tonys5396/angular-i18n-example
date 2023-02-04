@@ -27,15 +27,21 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "en": {
@@ -48,7 +54,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -76,7 +81,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -93,7 +97,9 @@
                   "maximumError": "10kb"
                 }
               ],
-              "localize": ["tw"]
+              "localize": [
+                "tw"
+              ]
             }
           }
         },
@@ -106,7 +112,7 @@
             "production": {
               "browserTarget": "angular-i18n-example:build:production"
             },
-            "en": {
+            "en":{
               "browserTarget": "angular-i18n-example:build:en"
             },
             "tw": {
@@ -137,19 +143,6 @@
             "scripts": []
           }
         },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
@@ -165,7 +158,6 @@
       }
     }
   },
-  "defaultProject": "angular-i18n-example",
   "cli": {
     "analytics": "91c11776-3b1f-4ca0-83be-108971db848d"
   }
